@@ -1,0 +1,9 @@
+export class CashServices {
+    checkValue = () => {
+        // 1. 가진 돈을 검증하는 코드(대략 10줄)
+        // ...
+        // ...
+        // ...
+        return true;
+    }
+}
