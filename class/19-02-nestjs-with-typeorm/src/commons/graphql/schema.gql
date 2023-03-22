@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Board {
+  number: Int!
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+type User {
+  email: String!
+  password: String!
+  name: String!
+  age: Int!
+}
+
+type Query {
+  fetchBoards: [Board!]!
+}
+
+type Mutation {
+  createUser(email: String!, password: String!, name: String!, age: Float!): User!
+  createBoard(createBoardInput: CreateBoardInput!): String!
+}
+
+input CreateBoardInput {
+  writer: String!
+  title: String!
+  contents: String!
+}
