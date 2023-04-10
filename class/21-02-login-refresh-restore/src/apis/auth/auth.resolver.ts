@@ -41,9 +41,11 @@ export class AuthResolver {
     return this.authService.getAccesstoken({ user });
   }
 
+  // useguard 사용법
   @UseGuards(GqlAuthRefreshGuard)
   @Mutation(() => String)
   restoreAccessToken(@CurrentUser() currentUser: any) {
+    console.log(currentUser);
     return this.authService.getAccesstoken({ user: currentUser });
   }
 }
