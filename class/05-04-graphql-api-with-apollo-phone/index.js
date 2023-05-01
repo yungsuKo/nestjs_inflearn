@@ -68,7 +68,7 @@ const resolvers = {
 
 				// 3. 핸드폰번호에 토큰 전송하기
 				sendTokenToSMS(args.myphone, mytoken);
-				return "생성 성공";
+				return "인증 성공";
 			}
 		},
 	},
