@@ -13,6 +13,7 @@ export class ImageUploaderResolver {
   createImageUploader(
     @Args({ name: 'files', type: () => [GraphQLUpload] }) files: FileUpload[],
   ) {
+    console.log('ddddddddddd');
     return this.imageUploaderService.create({ files });
   }
 

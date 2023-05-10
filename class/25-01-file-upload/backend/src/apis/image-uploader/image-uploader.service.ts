@@ -10,9 +10,9 @@ export class ImageUploaderService {
     // console.log(waitedFiles);
 
     const storage = new Storage({
-      projectId: 'nestjs-file-upload',
-      keyFilename: '',
-    }).bucket('aa');
+      projectId: 'codecamp-386223',
+      keyFilename: 'codecamp-386223-89eb7af08f6b.json',
+    }).bucket('codecamp-tom2');
 
     //  구글 스토리지에 파일 업로드 하기
 
@@ -35,7 +35,7 @@ export class ImageUploaderService {
             .createReadStream()
             .pipe(storage.file(file.filename).createWriteStream())
             .on('finish', () => {
-              resolve(`aa/${file.filename}`);
+              resolve(`codecamp-tom2/${file.filename}`);
             })
             .on('error', (err) => {
               reject();
