@@ -1,3 +1,4 @@
+// import axios from "axios";
 // console.log("안녕하세요");
 const aaa = async () => {
 	const result = await new Promise((resolve, reject) => {});
@@ -69,6 +70,7 @@ const fetchData2 = async () => {
 			}, 2000);
 		}),
 
+		// console.log(axios.get("https://jsonplaceholder.typicode.com/posts/1")),
 		new Promise((resolve, reject) => {
 			setTimeout(() => {
 				try {
