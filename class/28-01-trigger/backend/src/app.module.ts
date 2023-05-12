@@ -27,7 +27,7 @@ import { ImageUploaderModule } from './apis/image-uploader/image-uploader.module
       host: '127.0.0.1',
       port: 3306,
       username: 'root',
-      password: 'basketball2@',
+      password: '0000',
       database: 'myproject03',
       entities: [Board, User, PointTransaction],
       synchronize: true,
@@ -37,4 +37,4 @@ import { ImageUploaderModule } from './apis/image-uploader/image-uploader.module
     ImageUploaderModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }
