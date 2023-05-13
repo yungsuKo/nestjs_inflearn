@@ -22,7 +22,7 @@ export class ProductService {
 
     @InjectRepository(ProductTags)
     private readonly productTagsRepository: Repository<ProductTags>,
-  ) {}
+  ) { }
 
   async fetchAll() {
     const result = await this.productRepository.find({
@@ -74,40 +74,28 @@ export class ProductService {
     // });
 
     // 2. 상품과 상품거래위치를 같이 등록하는 경우
-    const {
-      productSaleslocationInput,
-      productCategoryId,
-      productTags,
-      ...product
-    } = createProductInput;
-    const result = await this.productSaleslocationRepository.save({
-      ...productSaleslocationInput,
-    });
+    const product = createProductInput;
+    // const result = await this.productSaleslocationRepository.save({
+    //   ...productSaleslocationInput,
+    // });
 
-    const result2 = [];
-    for (let i = 0; i < productTags.length; i++) {
-      const tagname = productTags[i].replace('#', '');
-      // 이미 등록된 태그인지 확인해보기
-      const prevTag = await this.productTagsRepository.findOne({
-        name: tagname,
-      });
+    // const result2 = [];
+    // for (let i = 0; i < productTags.length; i++) {
+    //   const tagname = productTags[i].replace('#', '');
+    //   // 이미 등록된 태그인지 확인해보기
+    //   const prevTag = await this.productTagsRepository.findOne({
+    //     name: tagname,
+    //   });
 
-      if (prevTag) {
-        result2.push(prevTag);
-      } else {
-        const newTag = await this.productTagsRepository.save({ name: tagname });
-        result2.push(newTag);
-      }
-    }
+    //   if (prevTag) {
+    //     result2.push(prevTag);
+    //   } else {
+    //     const newTag = await this.productTagsRepository.save({ name: tagname });
+    //     result2.push(newTag);
+    //   }
+    // }
 
-    const newProduct = await this.productRepository.save({
-      ...product,
-      productSaleslocation: result,
-      productCategory: {
-        id: productCategoryId,
-      },
-      productTags: result2,
-    });
+    const newProduct = await this.productRepository.save(product);
     return newProduct;
   }
 

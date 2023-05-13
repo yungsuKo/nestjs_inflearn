@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
 import { ProductSaleslocation } from '../productsSaleslocation/entities/productSlaeslocation.entity';
 import { ProductTags } from '../productsTags/entities/productTags.entity';
+import { ProductSubscriber } from './entities/product.subscriber';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { ProductTags } from '../productsTags/entities/productTags.entity';
   providers: [
     ProductResolver, //
     ProductService, //
+    ProductSubscriber
   ],
 })
 export class ProductModule { }

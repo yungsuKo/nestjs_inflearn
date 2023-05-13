@@ -19,8 +19,8 @@ export class ProductTags {
   @Field(() => String)
   name: string;
 
-  @ManyToMany(() => Product, (product) => product.productTags)
-  @Field(() => Product)
-  @JoinColumn()
-  products: Product[];
+  // @ManyToMany(() => Product, (product) => product.productTags)
+  // @Field(() => Product)
+  // @JoinColumn()
+  // products: Product[];
 }

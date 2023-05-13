@@ -45,21 +45,21 @@ export class Product {
   @Field(() => Date)
   deletedAt: Date;
 
-  @JoinColumn()
-  @OneToOne(() => ProductSaleslocation)
-  @Field(() => ProductSaleslocation)
-  productSaleslocation: ProductSaleslocation;
+  // @JoinColumn()
+  // @OneToOne(() => ProductSaleslocation)
+  // @Field(() => ProductSaleslocation)
+  // productSaleslocation: ProductSaleslocation;
 
-  @ManyToOne(() => ProductCategory)
-  @Field(() => ProductCategory)
-  productCategory: ProductCategory;
+  // @ManyToOne(() => ProductCategory)
+  // @Field(() => ProductCategory)
+  // productCategory: ProductCategory;
 
   @ManyToOne(() => User)
   @Field(() => User)
   user: User;
 
-  @ManyToMany(() => ProductTags, (productTags) => productTags.products)
-  @Field(() => ProductTags)
-  @JoinColumn()
-  productTags: ProductTags[];
+  // @ManyToMany(() => ProductTags, (productTags) => productTags.products)
+  // @Field(() => ProductTags)
+  // @JoinColumn()
+  // productTags: ProductTags[];
 }

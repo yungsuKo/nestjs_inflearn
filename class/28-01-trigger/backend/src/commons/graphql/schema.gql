@@ -42,9 +42,26 @@ type ImageUploader {
   exampleField: Int!
 }
 
+type Product {
+  id: Int!
+  name: String!
+  description: String!
+  price: Int!
+  isSoldout: Boolean!
+  deletedAt: DateTime!
+  user: User!
+}
+
+type ProductCategory {
+  id: String!
+  name: String!
+}
+
 type Query {
   fetchUser: String!
   fetchBoards: [Board!]!
+  fetchProducts: [Product!]!
+  fetchProduct(productId: String!): Product!
   imageUploader(id: Int!): ImageUploader!
 }
 
@@ -53,6 +70,10 @@ type Mutation {
   restoreAccessToken: String!
   createUser(email: String!, password: String!, name: String!, age: Float!): User!
   createBoard(createBoardInput: CreateBoardInput!): String!
+  updateProduct(productId: String!, updateProductInput: UpdateProductInput!): Product!
+  createProduct(createProductInput: CreateProductInput!): Product!
+  deleteProduct(productId: String!): Boolean!
+  createProductCategory(name: String!): ProductCategory!
   createPointTransaction(impUid: String!, amount: Float!): PointTransaction!
   createImageUploader(files: [Upload!]!): [String!]!
   updateImageUploader(updateImageUploaderInput: UpdateImageUploaderInput!): ImageUploader!
@@ -63,6 +84,18 @@ input CreateBoardInput {
   writer: String!
   title: String!
   contents: String!
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Int
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
 }
 
 """The `Upload` scalar type represents a file upload."""

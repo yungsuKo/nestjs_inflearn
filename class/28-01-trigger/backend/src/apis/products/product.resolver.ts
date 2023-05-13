@@ -7,7 +7,7 @@ import { UpdateProductInput } from './dto/updateProduct.input';
 
 @Resolver()
 export class ProductResolver {
-  constructor(private readonly productService: ProductService) {}
+  constructor(private readonly productService: ProductService) { }
 
   @Query(() => [Product])
   fetchProducts() {

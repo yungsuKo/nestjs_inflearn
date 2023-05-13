@@ -16,12 +16,12 @@ export class CreateProductInput {
   @Field(() => Int)
   price: number;
 
-  @Field(() => ProductSaleslocationInput)
-  productSaleslocationInput: ProductSaleslocationInput;
+  // @Field(() => ProductSaleslocationInput)
+  // productSaleslocationInput: ProductSaleslocationInput;
 
-  @Field(() => String)
-  productCategoryId: string;
+  // @Field(() => String)
+  // productCategoryId: string;
 
-  @Field(() => [String])
-  productTags: string[];
+  // @Field(() => [String])
+  // productTags: string[];
 }
