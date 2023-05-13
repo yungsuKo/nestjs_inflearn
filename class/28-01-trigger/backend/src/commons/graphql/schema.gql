@@ -43,7 +43,7 @@ type ImageUploader {
 }
 
 type Product {
-  id: Int!
+  id: String!
   name: String!
   description: String!
   price: Int!

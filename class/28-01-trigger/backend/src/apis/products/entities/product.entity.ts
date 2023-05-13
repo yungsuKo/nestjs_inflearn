@@ -18,8 +18,8 @@ import {
 @ObjectType()
 export class Product {
   @PrimaryGeneratedColumn('uuid')
-  @Field(() => Int)
-  id: number;
+  @Field(() => String)
+  id: string;
 
   @Column()
   @Field(() => String)
