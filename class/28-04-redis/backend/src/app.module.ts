@@ -1,5 +1,6 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
+import { CacheModule } from '@nestjs/cache-manager';
 import { GraphQLModule } from '@nestjs/graphql';
 import { BoardModule } from './apis/boards/boards.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -16,6 +17,8 @@ import { Product } from './apis/products/entities/product.entity';
 import { ProductSaleslocation } from './apis/productsSaleslocation/entities/productSlaeslocation.entity';
 import { ProductCategory } from './apis/productsCategory/entities/productCategory.entity';
 import { ProductTags } from './apis/productsTags/entities/productTags.entity';
+import { RedisClientOptions } from 'redis';
+const redisStore = require('cache-manager-redis-store');
 
 @Module({
   imports: [
@@ -37,12 +40,25 @@ import { ProductTags } from './apis/productsTags/entities/productTags.entity';
       username: 'root',
       password: '0000',
       database: 'mydocker03',
-      entities: [Board, User, PointTransaction, Product, ProductSaleslocation, ProductCategory, ProductTags],
+      entities: [
+        Board,
+        User,
+        PointTransaction,
+        Product,
+        ProductSaleslocation,
+        ProductCategory,
+        ProductTags,
+      ],
       synchronize: true,
       logging: true,
       // ORM이 실제 쿼리로 어떻게 돌아가는지 로그를 남겨줌
     }),
+    CacheModule.register<RedisClientOptions>({
+      store: redisStore,
+      url: 'redis://my-redis:6379',
+      isGlobal: true,
+    }),
     ImageUploaderModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}
