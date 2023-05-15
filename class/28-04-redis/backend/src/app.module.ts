@@ -18,7 +18,7 @@ import { ProductSaleslocation } from './apis/productsSaleslocation/entities/prod
 import { ProductCategory } from './apis/productsCategory/entities/productCategory.entity';
 import { ProductTags } from './apis/productsTags/entities/productTags.entity';
 import { RedisClientOptions } from 'redis';
-const redisStore = require('cache-manager-redis-store');
+import * as redisStore from 'cache-manager-redis-store';
 
 @Module({
   imports: [
