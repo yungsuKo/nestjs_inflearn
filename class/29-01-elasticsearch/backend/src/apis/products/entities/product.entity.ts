@@ -12,6 +12,7 @@ import {
   ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -62,4 +63,7 @@ export class Product {
   // @Field(() => ProductTags)
   // @JoinColumn()
   // productTags: ProductTags[];
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 }

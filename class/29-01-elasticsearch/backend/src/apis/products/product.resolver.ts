@@ -44,15 +44,15 @@ export class ProductResolver {
   async createProduct(
     @Args('createProductInput') createProductInput: CreateProductInput,
   ) {
-    this.elasticsearchService.create({
-      id: 'myid',
-      index: 'myproduct03',
-      document: {
-        ...createProductInput,
-      },
-    });
+    // this.elasticsearchService.create({
+    //   id: 'myid',
+    //   index: 'myproduct03',
+    //   document: {
+    //     ...createProductInput,
+    //   },
+    // });
 
-    // return await this.productService.create({ createProductInput });
+    return await this.productService.create({ createProductInput });
   }
 
   @Mutation(() => Boolean)
