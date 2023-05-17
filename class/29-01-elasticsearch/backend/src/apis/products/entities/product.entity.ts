@@ -67,3 +67,4 @@ export class Product {
   @UpdateDateColumn()
   updatedAt: Date;
 }
+// ec2
