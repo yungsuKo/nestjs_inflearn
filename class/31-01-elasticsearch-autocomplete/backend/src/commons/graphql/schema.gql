@@ -60,7 +60,7 @@ type ProductCategory {
 type Query {
   fetchUser: String!
   fetchBoards: [Board!]!
-  fetchProducts: [Product!]!
+  fetchProducts(search: String): [Product!]!
   fetchProduct(productId: String!): Product!
   imageUploader(id: Int!): ImageUploader!
 }

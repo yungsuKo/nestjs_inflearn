@@ -14,14 +14,18 @@ export class ProductResolver {
   ) {}
 
   @Query(() => [Product])
-  async fetchProducts() {
+  async fetchProducts(
+    @Args({ name: 'search', nullable: true }) search: string,
+  ) {
     const result = await this.elasticsearchService.search({
-      index: 'myproduct03',
+      index: 'myboardnew',
       query: {
-        match_all: {},
+        match: { description: search },
       },
     });
     console.log(JSON.stringify(result, null, ' '));
+    console.log(result.hits.hits[0]);
+    return;
     // return this.productService.fetchAll();
   }
 
