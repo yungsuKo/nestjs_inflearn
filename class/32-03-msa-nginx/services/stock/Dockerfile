@@ -1,9 +1,10 @@
-FROM node:14
 
-WORKDIR /auth-service/
-COPY ./package.json /auth-service/
-COPY ./yarn.lock /auth-service/
+FROM node:16
+
+WORKDIR /stock-service/
+COPY ./package.json /stock-service/
+COPY ./yarn.lock /stock-service/
 RUN yarn install
 
-COPY . /auth-service/
+COPY . /stock-service/
 CMD yarn start:dev
