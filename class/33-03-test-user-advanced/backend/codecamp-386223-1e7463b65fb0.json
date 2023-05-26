@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "codecamp-386223",
+  "private_key_id": "1e7463b65fb003857d81ba4123183a0f0497c3a5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDGlzwr39cF4OZE\nABX/WWCzPtzTGYFmX5XMmRgYwdd2ZVS2Qjua5FySZ0q1Pn1/U8j/OTyLcETHNu41\nm0a8D81j7sVLbpEUqWejaIbcaxxhyRv1C6V46xHF9JJ90wYGjapa8GR7EoC4PyIf\nG6Hr9rSpSyzRmM0Y0kxJA72tGbNQc4rJzEOU6Luya4+n/vNT5+PpZhpuNvb+Jy5i\naio+ksE6wou+zRkiCnPQDGhCCJnS0oYchth8/uwBxbHTRnxeRHd6NCFewLgW2RFM\n0VX3YLVO3tLcI3KsFHdXuRjRjIPEXlEF1tDkYcxKBVeXnVMrDTsxZZmXiUVSePkx\nwVXARoxPAgMBAAECggEALqTc9C0qEu5lBznB8OzsQo2UTlziQMpYo+qdd0soMV3R\njNF3sITMnXJ3YKSh02M5hYDLELE45lWnk525+nf3tO4jFvmMR/8WIZJugp0B2JHk\n6CRpJEKKNSWhtr3231ks1xk5cJLC+wORHx9dY8/ZVR4cE8rA+YCDfG7NgTfVHyLp\nrhZrKdKJAYLS0id+ibZfc+vyHlhEHTkWAXykd79DDI5l9nnyT5HUhUrCgrjweG+Q\nuov0U8dWR0MPgPQgOM4375PGDaFSu9qad07ktViqPd3Wy7eGxWVcOAI5bePqD1vy\nyElyJe66tGRd3NDZXp4f2oEiEIxdc8AU7oSPUy59QQKBgQD8q3M9/N3+sLfMvEhA\nX/yUl2mS53P2FUoH8xKIU/OeHkoxwN6JxB47qh6BnghBMP1HOb6i0FZ2J+zKLwDF\ncp5hejbrfI9xbMhik/VSwO1VqgD+i5eKXNsahilPoMalfpeMEwl9ApvfUwZoz0oG\nEJPDCkQVvREasd+hWx2UP+xwrwKBgQDJNVA8jh5IUr9hg4P/FfbVE/aKpfA3Js+P\nETeRnJgBgMwQItIf6hX+pynkWqsGvDWE934ru8w7iG7nNYQ17p5OlPDLFvCGlzd6\nJzdh9IT52pVGMayUQgzZFC2F5lxDPAOR1nFI6nTfW9P4hnR+Ur7QAO4Mqi7B7wWI\nW4eApSBGYQKBgQCXMzopVBK8gJ/coqdR7p7FhL4mrN7V2fONQkZK0oIsks+vak1B\nf9zfs3PB+QHTkS9f2gxcffPfjRDEBNCfV3Gzv2DyFn34UDKx2vypYs4jvzINIRe0\nMtDi1HoQLpPxIQorRpEc/9yrDZH+Ul1nt6/UvWX05ElCAkNi2ZWfy4j//QKBgFEr\nJrEnC+RVLUtjSK5w5+BRa1XHVz6Ic5bddTNSnqeMk8W2plmljzXpraanRPM0ncqE\nJOvzmJIzmbnABxPSrR46S2FCYcmJ2yF2DIuBnttEaI+mnl44vwIbd7nakkG1RiNh\nBNZLbtZkLwDFDN2g98TleyK0zKQDjpHRirpE4t5BAoGAUq0xjJWF0NufE60l6JWs\n5AwXxePK65mfd9nfOwkwj1yQ6ruvFUUVQOBMXAHZCfaBkuEw66vvIG2AqXlWrVNf\n2Yx35DnyN0mZYhS5xq+YGju6X2A/9TkWlc5DtFH4E08UbdSeKW8Nz5gZVGCKeruI\nV2ugwB0KGlI+Iz6kVfX0M0c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mybigquery03@codecamp-386223.iam.gserviceaccount.com",
+  "client_id": "102158404390326911936",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mybigquery03%40codecamp-386223.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
