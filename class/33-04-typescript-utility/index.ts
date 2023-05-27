@@ -37,3 +37,4 @@ type MyType5 = Record<zzz, string>;
 
 // 만약 union 타입을 만들려면?? => "name" | "age" | "hobby"
 const qqq: keyof IProfile;
+qqq === "";
