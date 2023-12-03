@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콜백과 친구들</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      //   function addEventListener(aaa, bbb) {
+      //     // 세팅된 api 주소로 요청
+      //     const res = 197; // 세팅된 api 주소로부터 받아온 결과
+      //     if (aaa === 'load') {
+      //       bbb(res);
+      //     }
+      //   }
+      const myCallBack = () => {
+        const aaa = new XMLHttpRequest();
+        aaa.open('get', 'http://numbersapi.com/random?min=1&max=100');
+        aaa.send();
+        aaa.addEventListener('load', (res) => {
+          console.log(res.target.response.split(' ')[0]); // api 요청 결과
+          const num = res.target.response.split(' ')[0];
+
+          const bbb = new XMLHttpRequest();
+          bbb.open('get', `https://koreanjson.com/posts/${num}`);
+          bbb.send();
+          bbb.addEventListener('load', (res) => {
+            console.log(JSON.parse(res.target.response));
+            const userId = JSON.parse(res.target.response).UserId;
+            const ccc = new XMLHttpRequest();
+            ccc.open('get', `https://koreanjson.com/posts?userId=${userId}`);
+            ccc.send();
+            ccc.addEventListener('load', (res) => {
+              console.log(JSON.parse(res.target.response));
+            });
+          });
+        });
+      };
+      const myPromise = () => {
+        // new Promise((성공했을때실행시킬함수, 실패했을때실행시킬함수) => {
+        //   try {
+        //     const response = '성공';
+        //     성공했을때실행시킬함수(response);
+        //   } catch (err) {
+        //     실패했을때실행시킬함수('실패');
+        //   }
+        // })
+        //   .then((res) => {
+        //     console.log(res); // 성공
+        //   })
+        //   .catch((err) => {
+        //     console.log(err); // 실패
+        //   });
+
+        // axios.get('http://numbersapi.com/random?min=1&max=100').then((res) => {
+        //   console.log(res.data.split(' ')[0]);
+        //   const num = res.data.split(' ')[0];
+        //   axios.get(`https://koreanjson.com/posts/${num}`).then((res) => {
+        //     console.log(res.data);
+        //     const userId = res.data.UserId;
+        //     axios
+        //       .get(`https://koreanjson.com/posts?userId=${userId}`)
+        //       .then((res) => {
+        //         console.log(res.data);
+        //       });
+        //   });
+        // });
+        console.log('1');
+        axios
+          .get('http://numbersapi.com/random?min=1&max=100')
+          .then((res) => {
+            console.log('2');
+            return axios.get(
+              `https://koreanjson.com/posts/${res.data.split(' ')[0]}`
+            );
+          })
+          .then((res) => {
+            console.log('3');
+            return axios.get(
+              `https://koreanjson.com/posts?userId=${res.data.UserId}`
+            );
+          })
+          .then((res) => {
+            console.log('4');
+            console.log(res.data);
+          });
+        console.log('5');
+      };
+      const myAsyncawait = async () => {
+        const { data } = await axios.get(
+          'http://numbersapi.com/random?min=1&max=100'
+        );
+        const num = data.split(' ')[0];
+        console.log(num);
+
+        const userId = await axios.get(`https://koreanjson.com/posts/${num}`);
+        const result = await axios.get(
+          `https://koreanjson.com/posts?userId=${userId.data.UserId}`
+        );
+        console.log(result.data);
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="myCallBack()">Callback 연습하기</button>
+    <button onclick="myPromise()">Promise 연습하기</button>
+    <button onclick="myAsyncawait()">Asyncawait 연습하기</button>
+  </body>
+</html>
