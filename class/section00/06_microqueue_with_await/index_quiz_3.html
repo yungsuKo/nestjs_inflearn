@@ -1,0 +1,37 @@
+<!-- 03-async-await-try-catch.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>이벤트루프</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      function onClickLoop() {
+        //     function aaa() {
+        //       try {
+        //         // axios.get('https://koreanjson.com/qqq/1');
+        //         axios.get('https://qqqqqq/qqq/1');
+        //         console.log('철수');
+        //       } catch (error) {
+        //         console.log('에러가 발생하였습니다!');
+        //       }
+        //     }
+        //     aaa();
+
+        async function bbb() {
+          try {
+            // axios.get('https://koreanjson.com/qqq/1');
+            await axios.get('https://qqqqqq/qqq/1');
+            console.log('철수');
+          } catch (error) {
+            console.log('에러가 발생하였습니다!');
+          }
+        }
+        bbb();
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickLoop()">시작하기</button>
+  </body>
+</html>

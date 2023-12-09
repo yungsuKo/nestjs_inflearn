@@ -1,0 +1,41 @@
+<!-- 01-async-await-quiz.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>이벤트루프</title>
+    <!-- =======시작!!!!======= -->
+    <!-- aaa-시작 -->
+    <!-- bbb-시작 -->
+    <!-- aaa-끝 -->
+    <!-- =======끝!!!!======= -->
+    <!-- 철수 -->
+    <script>
+      function onClickLoop() {
+        console.log('=======시작!!!!=======');
+
+        function aaa() {
+          console.log('aaa-시작');
+          bbb();
+          console.log('aaa-끝');
+        }
+
+        async function bbb() {
+          console.log('bbb-시작');
+          // await을 만나는 순간 기다리게된다.
+          // 마이크로 큐에다가 저장하게 됨
+          const friend = await '철수';
+          console.log(friend);
+          console.log('얘도 지연되게 되는 건가?');
+        }
+
+        aaa();
+
+        console.log('=======끝!!!!=======');
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickLoop()">시작하기</button>
+  </body>
+</html>
