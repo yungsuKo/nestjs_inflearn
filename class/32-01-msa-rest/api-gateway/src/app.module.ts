@@ -9,18 +9,14 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: 'AUTH-SERVICE',
         transport: Transport.TCP,
-        options: {
-          host: 'auth-service',
-          port: 3001,
-        },
+        options: { host: 'auth-service', port: 3001 },
+        // 게이트웨이와 서비스를 동일하게 입력
       },
       {
         name: 'RESOURCE-SERVICE',
         transport: Transport.TCP,
-        options: {
-          host: 'resource-service',
-          port: 3002,
-        },
+        options: { host: 'resource-service', port: 3002 },
+        // 게이트웨이와 서비스를 동일하게 입력
       },
     ]),
   ],

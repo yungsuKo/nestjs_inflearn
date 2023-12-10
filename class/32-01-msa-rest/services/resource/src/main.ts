@@ -8,10 +8,8 @@ async function bootstrap() {
     AppModule,
     {
       transport: Transport.TCP,
-      options: {
-        host: 'resource-service',
-        port: 3002,
-      },
+      options: { host: 'resource-service', port: 3002 },
+      // 게이트웨이와 서비스를 동일하게 입력
     },
   );
   await app.listen();

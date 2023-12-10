@@ -8,10 +8,8 @@ async function bootstrap() {
     AppModule,
     {
       transport: Transport.TCP,
-      options: {
-        host: 'auth-service',
-        port: 3001,
-      },
+      options: { host: 'auth-service', port: 3001 },
+      // 게이트웨이와 서비스를 동일하게 입력
     },
   );
   await app.listen();

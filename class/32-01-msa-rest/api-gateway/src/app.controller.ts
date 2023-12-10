@@ -4,8 +4,6 @@ import { ClientProxy } from '@nestjs/microservices';
 @Controller()
 export class AppController {
   constructor(
-    // private readonly appService: AppService
-
     @Inject('AUTH-SERVICE')
     private readonly clientAuthService: ClientProxy,
     @Inject('RESOURCE-SERVICE')
@@ -18,7 +16,11 @@ export class AppController {
   // }
   @Get('/auth/login')
   login() {
-    return this.clientAuthService.send({ cmd: 'aaa' }, { name: '철수' });
+    return this.clientAuthService.send(
+      { cmd: 'aaa' },
+      // 2번째 파라미터에서 데이터를 넘김
+      { email: 'aa@aa.aa', password: 'aa' },
+    );
   }
 
   @Get('/boards')
