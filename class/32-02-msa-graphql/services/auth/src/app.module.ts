@@ -14,6 +14,9 @@ import {
       autoSchemaFile: 'src/commons/graphql/schema.gql',
     }),
   ],
-  providers: [AppResolver, AppService],
+  providers: [
+    AppResolver, //
+    AppService,
+  ],
 })
 export class AppModule {}

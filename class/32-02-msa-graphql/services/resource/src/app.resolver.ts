@@ -1,8 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+// import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Query } from '@nestjs/graphql';
+import { Query, Resolver } from '@nestjs/graphql';
 
-@Controller()
+@Resolver()
 export class AppResolver {
   constructor(private readonly appService: AppService) {}
 
@@ -11,7 +11,7 @@ export class AppResolver {
   //   return this.appService.getHello();
   // }
 
-  @Query()
+  @Query(() => String)
   fetchBoards() {
     return 'board 조회 성공!!';
   }

@@ -1,8 +1,8 @@
-import { Controller, Get } from '@nestjs/common';
+// import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Mutation } from '@nestjs/graphql';
+import { Mutation, Resolver } from '@nestjs/graphql';
 
-@Controller()
+@Resolver()
 export class AppResolver {
   constructor(private readonly appService: AppService) {}
 
